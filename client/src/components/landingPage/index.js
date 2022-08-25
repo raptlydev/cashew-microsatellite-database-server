@@ -18,7 +18,7 @@ class Landing extends Component {
                   <div className="single-about-history">
                     <div className="about-history-txt">
                       <p>
-                      Cashewwwwwwwwwww is the third most important tree nut crop in the global market. Despite its economic importance, it lacks genomic resources such marker resources. Cashew microsatellite database (CMDB) caters to the needs of microsatellite/Simple sequence repeats (SSR) markers for cashew researchers, which are currently available in a very limited numbers.
+                      Cashew is the third most important tree nut crop in the global market. Despite its economic importance, it lacks genomic resources such marker resources. Cashew microsatellite database (CMDB) caters to the needs of microsatellite/Simple sequence repeats (SSR) markers for cashew researchers, which are currently available in a very limited numbers.
                       </p>
                     </div>
                   </div>
