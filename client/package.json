@@ -1,5 +1,5 @@
 {
-  "name": "humdard-e-kuparwa",
+  "name": "cashewsnp",
   "version": "0.1.0",
   "private": true,
   "main": "index.js",
@@ -8,12 +8,13 @@
     "@babel/runtime-corejs3": "^7.4.5",
     "@material-ui/core": "^4.4.0",
     "@material-ui/icons": "^4.2.1",
-    "antd": "^4.20.7",
+    "antd": "^3.26.19",
     "axios": "^0.19.0",
     "classnames": "^2.2.6",
     "core-js": "^3.1.3",
     "file-saver": "^2.0.2",
     "history": "^4.9.0",
+    "http-server": "^14.1.1",
     "immutability-helper": "^3.0.1",
     "jquery-ui": "^1.12.1",
     "less": "^3.9.0",
@@ -40,23 +41,30 @@
     "react-redux": "^7.1.0",
     "react-router": "^5.0.1",
     "react-router-dom": "^5.0.1",
+    "react-scripts": "^5.0.1",
     "react-to-print": "^2.14.7",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
     "regenerator-runtime": "^0.13.2",
-    "styled-components": "^4.2.0"
+    "styled-components": "^4.2.0",
+    "webpack-dev-server": "^3.11.3"
   },
   "scripts": {
-    "start": "NODE_ENV=development NODE_MODE=local && webpack-dev-server --max_old_space_size=8192 --mode development --hot --progress --open",
-    "build": "NODE_ENV=development NODE_MODE=local && webpack --max_old_space_size=8192 --mode development",
+    "start": "npm run start-webpack",
+    "build": "npm run build-webpack",
     "qa": "NODE_ENV=production NODE_MODE=qa webpack --max_old_space_size=8192 --mode production && node generate-build-id-qa.js",
     "staging": "NODE_ENV=production NODE_MODE=staging webpack --max_old_space_size=8192 --mode production && node generate-build-id-staging.js",
     "development": "NODE_ENV=production NODE_MODE=development webpack --max_old_space_size=8192 --mode production && node generate-build-id-development.js",
     "production": "NODE_ENV=production NODE_MODE=production webpack --max_old_space_size=8192 --mode production && node generate-build-id-production.js",
-    "heroku-prebuild": "npm install --dev"
+    "heroku-prebuild": "npm install --dev",
+    "build-webpack": "NODE_ENV=production NODE_MODE=production webpack --mode production",
+    "start-webpack": "http-server ./build"
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "engines": {
+    "node": "16.x"
   },
   "browserslist": [
     ">0.2%",
