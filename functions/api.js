@@ -3,7 +3,7 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import router from './routes/posts.js';
+import router from '../routes/posts.js';
 import path from 'path'
 import { fileURLToPath } from 'url';
 
