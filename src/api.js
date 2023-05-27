@@ -6,7 +6,7 @@ const dotenv = require('dotenv');
 // const postRoutes = require('../routes/posts.js');
 // const serverless = require('serverless-http');
 
-import postRoutes from '../routes/posts.js';
+import router from '../routes/posts.js';
 const app = express();
 dotenv.config();
 
@@ -14,7 +14,7 @@ app.use(bodyParser.json({ limit: "30mb", extended: true}));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true}));
 app.use(cors());
 
-app.use('/.netlify/functions/api', postRoutes);
+app.use('/.netlify/functions/api', router);
 
 // app.get('*', (req,res)=>{
 //     req.sendFile(path.resolve(__dirname, 'build', 'index.html'))
@@ -31,6 +31,4 @@ mongoose.connect(process.env.CONNECTION_URL)
     .then(()=>app.listen(PORT, ()=>console.log(`Server running on port: ${PORT}`)))
     .catch((err)=> console.log(err.message));
 
-// module.exports = app;
 // module.exports.handler = serverless(app);
-
