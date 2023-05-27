@@ -4,12 +4,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import router from '../routes/posts.js';
-import path from 'path'
-import { fileURLToPath } from 'url';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-console.log(__dirname, "DIR NAME");
 const app = express();
 dotenv.config();
 app.use(bodyParser.json({ limit: "30mb", extended: true}));
