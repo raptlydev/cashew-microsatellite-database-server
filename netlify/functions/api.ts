@@ -3,7 +3,8 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import router from '../routes/posts.js';
+import router from '../../routes/posts.js';
+import serverless from 'serverless-http';
 
 const app = express();
 dotenv.config();
@@ -11,7 +12,7 @@ app.use(bodyParser.json({ limit: "30mb", extended: true}));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true}));
 app.use(cors());
 
-app.use('/.netlify/functions/api', router);
+app.use('/.netlify/functions', router);
 
 app.get('/', (req,res)=>{
     res.send("Hello to the test projects")
@@ -24,3 +25,4 @@ mongoose.connect(process.env.CONNECTION_URL)
     .then(()=>app.listen(PORT, ()=>console.log(`Server running on port: ${PORT}`)))
     .catch((err)=> console.log(err.message));
 
+export const handler = serverless(app);
