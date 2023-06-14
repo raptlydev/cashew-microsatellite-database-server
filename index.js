@@ -24,4 +24,4 @@ mongoose.connect(process.env.CONNECTION_URL)
     .then(()=>app.listen(PORT, ()=>console.log(`Server running on port: ${PORT}`)))
     .catch((err)=> console.log(err.message));
 
-export const handler = serverless(app);
+export default app;
